@@ -1,73 +1,100 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
-.container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px 0;
     text-align: center;
 }
 
+header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 1.2rem;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 label {
     display: block;
     margin-bottom: 5px;
+    font-weight: bold;
 }
 
 input, select, button {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    margin: 5px 0;
+    border: 1px solid #ddd;
     border-radius: 4px;
+    font-size: 1rem;
 }
 
 input:focus, select:focus {
-    border-color: #007BFF;
+    border-color: #007bff;
+    outline: none;
 }
 
 button {
-    background-color: #007BFF;
+    background-color: #007bff;
     color: white;
+    border: none;
     cursor: pointer;
+    font-size: 1.1rem;
+    padding: 10px;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
-.select-button {
-    margin-top: 10px;
-}
-
-.transform-button {
-    margin-top: 20px;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-}
-
 #result {
     margin-top: 20px;
     text-align: center;
+}
+
+#result p {
+    font-size: 1.1rem;
+    color: #333;
 }
