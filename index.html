@@ -21,7 +21,6 @@
                     <select id="sourceProjection" required>
                         <option value="EPSG:4326">WGS 84</option>
                         <option value="EPSG:32647">UTM Zone 47N</option>
-                        <option value="EPSG:32648">UTM Zone 48N</option>
                         <option value="EPSG:4742">GDM2000</option>
                     </select>
                 </div>
@@ -30,13 +29,24 @@
                     <select id="targetProjection" required>
                         <option value="EPSG:4326">WGS 84</option>
                         <option value="EPSG:32647">UTM Zone 47N</option>
-                        <option value="EPSG:32648">UTM Zone 48N</option>
                         <option value="EPSG:4742">GDM2000</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="coordinates">Coordinates (Lon, Lat or Easting, Northing)</label>
-                    <input type="text" id="coordinates" placeholder="Enter coordinates" required>
+                    <label for="lon">Longitude (Lon)</label>
+                    <input type="text" id="lon" placeholder="Longitude" required>
+                </div>
+                <div class="form-group">
+                    <label for="lat">Latitude (Lat)</label>
+                    <input type="text" id="lat" placeholder="Latitude" required>
+                </div>
+                <div class="form-group">
+                    <label for="easting">Easting</label>
+                    <input type="text" id="easting" placeholder="Easting" required>
+                </div>
+                <div class="form-group">
+                    <label for="northing">Northing</label>
+                    <input type="text" id="northing" placeholder="Northing" required>
                 </div>
                 <button type="submit">Transform</button>
             </form>
@@ -49,6 +59,7 @@
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.6.2/proj4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
