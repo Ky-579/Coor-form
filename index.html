@@ -7,73 +7,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Coordinate Transformer</h1>
-        
-        <form id="transform-choice-form">
-            <label for="transformation-type">Select Transformation Type:</label>
-            <select id="transformation-type" name="transformation-type" required>
-                <option value="" disabled selected>Select transformation</option>
-                <option value="to-en">Longitude/Latitude to Easting/Northing</option>
-                <option value="to-ll">Easting/Northing to Longitude/Latitude</option>
-            </select>
-            <button type="submit" class="select-button">Select</button>
-        </form>
-
-        <form id="transform-form" style="display: none;">
-            <div class="form-group">
-                <label for="source-projection">Source Projection:</label>
-                <select id="source-projection" name="source-projection" required>
-                    <option value="EPSG:4326">WGS 84</option>
-                    <option value="EPSG:4742">GDM2000</option>
-                    <option value="EPSG:32647">UTM Zone 47N</option>
-                    <option value="EPSG:32648">UTM Zone 48N</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="target-projection">Target Projection:</label>
-                <select id="target-projection" name="target-projection" required>
-                    <option value="EPSG:4326">WGS 84</option>
-                    <option value="EPSG:4742">GDM2000</option>
-                    <option value="EPSG:32647">UTM Zone 47N</option>
-                    <option value="EPSG:32648">UTM Zone 48N</option>
-                </select>
-            </div>
-
-            <div id="ll-inputs" class="input-group">
-                <div class="form-group">
-                    <label for="longitude">Longitude:</label>
-                    <input type="text" id="longitude" name="longitude">
-                </div>
-                <div class="form-group">
-                    <label for="latitude">Latitude:</label>
-                    <input type="text" id="latitude" name="latitude">
-                </div>
-            </div>
-
-            <div id="en-inputs" class="input-group" style="display: none;">
-                <div class="form-group">
-                    <label for="easting">Easting:</label>
-                    <input type="text" id="easting" name="easting">
-                </div>
-                <div class="form-group">
-                    <label for="northing">Northing:</label>
-                    <input type="text" id="northing" name="northing">
-                </div>
-            </div>
-
-            <button type="submit" class="transform-button">Transform</button>
-        </form>
-
-        <div id="result" style="display: none;">
-            <h2>Transformed Coordinates</h2>
-            <p id="transformed-easting" style="display: none;">Easting: </p>
-            <p id="transformed-northing" style="display: none;">Northing: </p>
-            <p id="transformed-longitude" style="display: none;">Longitude: </p>
-            <p id="transformed-latitude" style="display: none;">Latitude: </p>
+    <header>
+        <div class="container">
+            <h1>Coordinate Transformer</h1>
+            <p>Convert coordinates between different projections with ease.</p>
         </div>
-    </div>
+    </header>
+    <main>
+        <div class="container">
+            <form id="transform-form">
+                <div class="form-group">
+                    <label for="sourceProjection">Source Projection</label>
+                    <select id="sourceProjection" required>
+                        <option value="EPSG:4326">WGS 84</option>
+                        <option value="EPSG:32647">UTM Zone 47N</option>
+                        <option value="EPSG:4742">GDM2000</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="targetProjection">Target Projection</label>
+                    <select id="targetProjection" required>
+                        <option value="EPSG:4326">WGS 84</option>
+                        <option value="EPSG:32647">UTM Zone 47N</option>
+                        <option value="EPSG:4742">GDM2000</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="coordinates">Coordinates (Lon, Lat or Easting, Northing)</label>
+                    <input type="text" id="coordinates" placeholder="Enter coordinates" required>
+                </div>
+                <button type="submit">Transform</button>
+            </form>
+            <div id="result"></div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Coordinate Transformer. All rights reserved.</p>
+        </div>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.6.2/proj4.js"></script>
     <script src="app.js"></script>
 </body>
