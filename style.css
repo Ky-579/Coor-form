@@ -5,13 +5,26 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    overflow: hidden;
+    color: #333;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 header {
-    background-color: #007bff;
+    background-color: rgba(0, 123, 255, 0.8);
     color: white;
     padding: 20px 0;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 header .container {
@@ -36,15 +49,18 @@ main {
     justify-content: center;
     align-items: center;
     padding: 20px 0;
+    position: relative;
+    z-index: 1;
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #333;
 }
 
 h1 {
@@ -52,23 +68,30 @@ h1 {
     color: #333;
 }
 
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
 .form-group {
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
     font-weight: bold;
+    color: #333;
 }
 
 input, select, button {
     width: 100%;
     padding: 10px;
-    margin: 5px 0;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
+    color: #333;
 }
 
 input:focus, select:focus {
@@ -77,6 +100,7 @@ input:focus, select:focus {
 }
 
 button {
+    grid-column: span 2;
     background-color: #007bff;
     color: white;
     border: none;
@@ -92,12 +116,14 @@ button:hover {
 #result {
     margin-top: 20px;
     text-align: center;
+    color: #333;
 }
 
 #result p {
     font-size: 1.1rem;
     color: #333;
 }
+
 @media (max-width: 600px) {
     header h1 {
         font-size: 1.5rem;
