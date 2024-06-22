@@ -20,7 +20,8 @@
                     <label for="sourceProjection">Source Projection</label>
                     <select id="sourceProjection" required>
                         <option value="EPSG:4326">WGS 84</option>
-                        <option value="EPSG:32647">UTM Zone 47N</option>
+                        <option value="EPSG:24547">UTM Zone 47N</option>
+                        <option value="EPSG:24548">UTM Zone 48N</option>
                         <option value="EPSG:4742">GDM2000</option>
                     </select>
                 </div>
@@ -28,25 +29,29 @@
                     <label for="targetProjection">Target Projection</label>
                     <select id="targetProjection" required>
                         <option value="EPSG:4326">WGS 84</option>
-                        <option value="EPSG:32647">UTM Zone 47N</option>
+                        <option value="EPSG:24547">UTM Zone 47N</option>
+                        <option value="EPSG:24548">UTM Zone 48N</option>
                         <option value="EPSG:4742">GDM2000</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="lon">Longitude (Lon)</label>
-                    <input type="text" id="lon" placeholder="Longitude" required>
+                    <label for="longitude">Longitude/Easting</label>
+                    <input type="text" id="longitude" placeholder="Enter longitude or easting" required>
                 </div>
                 <div class="form-group">
-                    <label for="lat">Latitude (Lat)</label>
-                    <input type="text" id="lat" placeholder="Latitude" required>
+                    <label for="latitude">Latitude/Northing</label>
+                    <input type="text" id="latitude" placeholder="Enter latitude or northing" required>
                 </div>
                 <div class="form-group">
-                    <label for="easting">Easting</label>
-                    <input type="text" id="easting" placeholder="Easting" required>
-                </div>
-                <div class="form-group">
-                    <label for="northing">Northing</label>
-                    <input type="text" id="northing" placeholder="Northing" required>
+                    <label>Result Format</label>
+                    <div>
+                        <input type="radio" id="format-latlon" name="resultFormat" value="latlon" checked>
+                        <label for="format-latlon">Longitude/Latitude</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="format-eastnorth" name="resultFormat" value="eastnorth">
+                        <label for="format-eastnorth">Easting/Northing</label>
+                    </div>
                 </div>
                 <button type="submit">Transform</button>
             </form>
