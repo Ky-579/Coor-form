@@ -63,6 +63,14 @@ main {
     color: #333;
 }
 
+.logo {
+            width: 100px; /* Adjust width as needed */
+            height: auto; /* Maintain aspect ratio */
+            position: fixed; /* Position fixed to stay at the corner even on scroll */
+            right: 380px; /* Distance from the right edge */
+            bottom: 25px; /* Distance from the bottom edge */
+}
+
 h1 {
     text-align: center;
     color: #333;
